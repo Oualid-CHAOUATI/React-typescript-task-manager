@@ -1,9 +1,19 @@
 import { Avatar, Box, Typography } from '@mui/material';
 import React, { ReactElement, FC } from 'react';
 
-export const Profile: FC = (): ReactElement => {
+import PropTypes from 'prop-types';
+
+interface IProps {
+  name: string;
+}
+
+export const Profile: FC<IProps> = ({
+  name = '0 0',
+}): ReactElement => {
+  //   const { name = 'ild waa' } = props;
+  //
   const avatarSize = '100px';
-  const name = 'wild roy';
+
   return (
     <>
       <Box
@@ -14,13 +24,13 @@ export const Profile: FC = (): ReactElement => {
       >
         <Avatar
           {...stringAvatar(name)}
-          {...stringAvatar('Kent hh')}
           sx={{
             width: avatarSize,
             height: avatarSize,
             fontSize: '26px',
             fontWeight: 'bold',
             backgroundColor: 'primary.main',
+            textTransform: 'uppercase',
           }}
         />
         <Typography
@@ -53,3 +63,7 @@ function stringAvatar(name: string) {
     children: finalName,
   };
 }
+
+Profile.propTypes = {
+  name: PropTypes.string.isRequired,
+};
