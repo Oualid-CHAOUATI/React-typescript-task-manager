@@ -6,12 +6,12 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {
   ISelectField,
-  ISelectPropTypes,
+  // ISelectPropTypes,
 } from './interfaces/ISelectField';
 
 export const _TaskSelectField: FC<ISelectField> = ({
   value = '',
-  options,
+  options = [],
   onChange,
   label = 'hh',
   optionsValues,

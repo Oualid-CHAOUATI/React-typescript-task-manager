@@ -9,6 +9,8 @@ import { _TaskTitleField } from './_taskTitleField';
 import { _TaskDescriptionField } from './_taskDescriptionFiled';
 import { _TaskDateField } from './_taskDateField';
 import { _TaskSelectField } from './_taskSelectField';
+import { Priority } from './Enums/Priority.enum';
+import { Status } from './Enums/status.enum';
 
 export const CreateTaskForm: FC = (): ReactElement => {
   const onChange = (e: SelectChangeEvent) =>
@@ -27,13 +29,21 @@ export const CreateTaskForm: FC = (): ReactElement => {
 
           <Stack direction={'row'} spacing={2}>
             <_TaskSelectField
-              options={[1, 2]}
-              label="wawawa"
+              options={[
+                Status.todo,
+                Status.inProgress,
+                Status.completed,
+              ]}
+              label="status"
               {...{ onChange }}
               name="s"
             />
             <_TaskSelectField
-              options={['low', 'medium', 'high']}
+              options={[
+                Priority.low,
+                Priority.normal,
+                Priority.high,
+              ]}
               label="priority"
               {...{ onChange }}
               name="s"

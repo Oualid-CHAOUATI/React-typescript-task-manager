@@ -3,7 +3,8 @@ import { IDisabled } from './IDisabled';
 import PropTypes from 'prop-types';
 export interface ISelectField extends IDisabled {
   name: string;
-  options: (number | string)[];
+
+  options: (string | number)[];
   optionsValues?: (number | string)[];
   value?: number | string;
   labelId?: string;
@@ -11,24 +12,17 @@ export interface ISelectField extends IDisabled {
   onChange?: (e: SelectChangeEvent) => void;
 }
 
-const p = PropTypes;
+// const p = PropTypes;
 
 export const ISelectPropTypes = {
   name: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ]),
-  ).isRequired,
-  optionsValues: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-      PropTypes.oneOf([null]),
-      PropTypes.oneOf([undefined]),
-    ]),
-  ),
+  options: PropTypes.arrayOf(PropTypes.string),
+  // optionsValues: PropTypes.arrayOf(
+  //   PropTypes.oneOfType([
+  //     PropTypes.number,
+  //     PropTypes.string,
+  //   ]),
+  // ),
   value: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
