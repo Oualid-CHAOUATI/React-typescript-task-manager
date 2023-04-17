@@ -26,12 +26,13 @@ export const TaskCounter: FC<ItaskCounter> = ({
             width: size,
             border: `10px solid`,
             borderColor: color,
+            background: '#fff',
           }}
         >
           <Typography
             variant="h4"
             component="p"
-            color="white"
+            color="blue"
           >
             {count}
           </Typography>

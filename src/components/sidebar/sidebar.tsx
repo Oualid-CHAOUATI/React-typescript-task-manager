@@ -6,7 +6,7 @@ export const Sidebar: FC = (): ReactElement => {
   return (
     <>
       {/* <Profile name="waild ww" /> */}
-      <Profile name="wild woo" />
+      <Profile name="wild sh" />
       <CreateTaskForm />
     </>
   );

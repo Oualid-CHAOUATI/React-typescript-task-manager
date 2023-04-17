@@ -4,7 +4,7 @@ import { ITaskHeader } from './interfaces/ITaskHeader';
 import dayjs from 'dayjs';
 
 export const _TaskHeader: FC<ITaskHeader> = ({
-  title = 'empty title',
+  title = 'Here comes a title',
   date = dayjs(),
 }): ReactElement => {
   const formattedDate = date

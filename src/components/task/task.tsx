@@ -5,6 +5,7 @@ import { _TaskHeader } from './_task-header';
 import { _TaskDescription } from './_taskDescription';
 import { _TaskFooter } from './_taskFooter';
 import { ITask } from './interfaces/ITask';
+import { Priority } from '../createTaskForm/Enums/Priority.enum';
 
 export const Task: FC<ITask> = ({
   priority,
@@ -16,6 +17,20 @@ export const Task: FC<ITask> = ({
   onClick,
 }): ReactElement => {
   const color = emitCorrectColorandLabel(status).color;
+  let priorityColor = '';
+
+  switch (priority) {
+    case Priority.low:
+      priorityColor = 'rgb(207, 36, 244)';
+      break;
+
+    case Priority.normal:
+      priorityColor = 'orange';
+      break;
+    case Priority.high:
+      priorityColor = 'red';
+      break;
+  }
   return (
     <>
       <Box
@@ -33,10 +48,11 @@ export const Task: FC<ITask> = ({
           sx={{
             position: 'absolute',
             top: '0',
-            left: '0',
+            left: '-.5em',
             transform: 'translate(0%,-50%)',
-            padding: '.5em',
-            backgroundColor: 'blue',
+            padding: '.5em 1em',
+            backgroundColor: priorityColor,
+            borderRadius: '.5em',
           }}
         >
           {priority}

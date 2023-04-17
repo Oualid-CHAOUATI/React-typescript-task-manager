@@ -8,10 +8,8 @@ interface IProps {
 }
 
 export const Profile: FC<IProps> = ({
-  name = '0 0',
+  name = 'Walid CHWT',
 }): ReactElement => {
-  //   const { name = 'ild waa' } = props;
-  //
   const avatarSize = '100px';
 
   return (
@@ -19,7 +17,6 @@ export const Profile: FC<IProps> = ({
       <Box
         display="flex"
         flexDirection="column"
-        // justifyContent="center"
         alignItems="center"
       >
         <Avatar
